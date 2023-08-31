@@ -4,6 +4,10 @@ const eventController = require("../controller/event-controller");
 // console.log(eventController);
 
 eventRouter
+.route("/")
+.get(eventController.eventsList)
+
+eventRouter
 .route("/:id")
 .get(eventController.findOneEvent)
 

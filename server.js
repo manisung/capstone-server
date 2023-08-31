@@ -7,6 +7,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 5050;
 
 app.use(cors());
+app.use(express.static("public"));
 app.use(express.json());
 
 const userRoutes = require("./routes/user-routes");

@@ -4,8 +4,17 @@ const knex = require("knex")(require("../knexfile"));
 //this is the events page
 //so here needs event card grabbing information from backend
 //then one button user can click and register for event
-
-
+const eventsList = (_req, res) => {
+    // console.log("eventsList");
+    knex("events")
+      .then((data) => {
+        // console.log(data);
+        res.status(200).json(data);
+      })
+      .catch((error) =>
+        res.status(400).send(`Error retrieving events: ${error}`)
+      );
+  };
 
 //API to find one specific event
 
@@ -51,5 +60,6 @@ const eventUsers = (req, res) => {
 module.exports = {
     findOneEvent,
     eventUsers,
+    eventsList
   };
   
