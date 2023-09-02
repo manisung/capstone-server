@@ -5,11 +5,19 @@ const eventController = require("../controller/event-controller");
 
 eventRouter
 .route("/")
-.get(eventController.eventsList)
+.get(eventController.eventsList);
+
+eventRouter
+    .route("/registered")
+    .get(eventController.registered);
+    
 
 eventRouter
 .route("/:id")
-.get(eventController.findOneEvent)
+.get(eventController.findOneEvent);
+
+
+
 
 eventRouter.route("/:id/users").get(eventController.eventUsers);
 

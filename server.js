@@ -12,9 +12,12 @@ app.use(express.json());
 
 const userRoutes = require("./routes/user-routes");
 const eventRoutes = require("./routes/event-routes");
+const videos = require("./routes/video-routes");
 
 app.use("/users", userRoutes);
 app.use("/events", eventRoutes);
+app.use("/videos", videos);
+
 
 app.get('/', (req, res) => {
     res.send(`<h1>Welcome to my Yumi Chung App</h1>`);

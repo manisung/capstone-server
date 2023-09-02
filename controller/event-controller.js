@@ -55,11 +55,27 @@ const eventUsers = (req, res) => {
       });
   };
 
+
+  const registered = (req, res) => {
+    knex("events")
+      .innerJoin("users_events", "events.id", "users_events.event_id")
+      .innerJoin("users", "users_events.user_id", "users.id")
+      .then((users) => {
+        res.status(200).json(users);
+      })
+      .catch((error) => {
+        res.status(500).json({
+          message: `Unalbe to retrieve users for event with ID: ${req.params.id} ${error}`,
+        });
+      });
+  };
+
 // here need to use junction table, need help tomorrow
 
 module.exports = {
     findOneEvent,
     eventUsers,
-    eventsList
+    eventsList,
+    registered
   };
   
