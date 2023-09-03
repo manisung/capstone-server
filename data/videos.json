@@ -1,30 +1,30 @@
 [
     {
       "id": "1",
-      "title": "y2k",
+      "title": "Got y2k?",
       "image": "image1.png",
-      "description": "Yumi's third song",
+      "description": "Yumi's Lastest Song",
       "video": "y2k.mp4"
     },
     {
         "id": "2",
-        "title": "y2k-dance",
+        "title": "Got y2k?",
         "image": "image2.png",
-        "description": "Yumi's third song - dance versrion",
+        "description": "Dance Version",
         "video": "y2k-dance.mp4"
     },
     {
         "id": "3",
         "title": "wanna be close to you",
         "image": "image3.png",
-        "description": "Yumi's second song - dance versrion",
+        "description": "Yumi's second song",
         "video": "wbcty.mp4"
     },
     {
         "id": "4",
         "title": "Breakin' My Heart",
         "image": "image4.png",
-        "description": "Yumi's first debut song - dance versrion",
+        "description": "Yumi's first debut song",
         "video": "bmh.mp4"
     }
   ]

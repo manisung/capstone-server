@@ -45,8 +45,6 @@ const isUserRegisteredEvents = (req, res) => {
   console.log(req.params.eventId);
 
   knex("users_events")
-    // .innerJoin("users_events", "users.id", "users_events.user_id")
-    // .innerJoin("events", "users_events.event_id", "events.id")
     .where("users_events.user_id", req.params.id)
     .where("users_events.event_id", req.params.eventId)
     .then((events) => {
