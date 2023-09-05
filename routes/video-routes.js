@@ -1,7 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const serverURL = process.env.SERVER_URL + process.env.PORT
+
+let serverURL;
+
+console.log('NODE_ENV', process.env.NODE_ENV );
+
+if(process.env.NODE_ENV === 'production'){
+    serverURL = process.env.SERVER_URL;
+} else {
+    serverURL = process.env.SERVER_URL + process.env.PORT
+}   
 
 
 router.get('/', (req, res) => {
