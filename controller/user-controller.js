@@ -41,16 +41,17 @@ const userEvents = (req, res) => {
 
 
 //API to check whether the user is registered for the event they want to register
-const isUserRegisteredEvents = (req, res) => {
+const registerEvent = (req, res) => {
   console.log(req.params.eventId);
 
   knex("users_events")
     .where("users_events.user_id", req.params.id)
     .where("users_events.event_id", req.params.eventId)
     .then((events) => {
-      console.log(events);
+      // console.log(events);
       if (events.length > 0) {
         res.status(200).json({ message: 'You have already registered for this event', events });
+        console.log("registered", events);
       } else {
         // TODO insert new record into user_events table
         knex("users_events").insert({
@@ -58,6 +59,7 @@ const isUserRegisteredEvents = (req, res) => {
           event_id: req.params.eventId
         }).then(response => {
           res.status(200).json({ message: 'thank you for registering', events });
+          console.log("thank you for registering reponse", events);
         });
 
       }
@@ -75,5 +77,7 @@ const isUserRegisteredEvents = (req, res) => {
 module.exports = {
   findOneUser,
   userEvents,
-  isUserRegisteredEvents
+  registerEvent
 };
+
+

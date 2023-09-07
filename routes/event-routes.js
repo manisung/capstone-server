@@ -19,6 +19,7 @@ eventRouter
 
 
 
+
 eventRouter.route("/:id/users").get(eventController.eventUsers);
 
 module.exports = eventRouter;

@@ -12,6 +12,6 @@ userRouter.route("/:id/events").get(userController.userEvents);
 
 
 // TODO rename controller to be different than above
-userRouter.route("/:id/events/:eventId").get(userController.isUserRegisteredEvents);
+userRouter.route("/:id/events/:eventId").post(userController.registerEvent);
 
 module.exports = userRouter;
